@@ -110,6 +110,7 @@ DocSync
 - **OCR:** Tesseract (fallback)
 - **Auth:** JWT for serverless auth
 - **Containerization:** Docker
+- **Hosted On:** Google Cloud Run (backend) + Vercel (frontend)
 
 ### Frontend
 - **Framework:** React 19 + TypeScript
