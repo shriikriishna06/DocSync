@@ -1,6 +1,6 @@
 # DOCSYNC - AI POWERED RAG-BASED ACADEMIC WORKSPACE
 DocSync is a RAG-based study assistant that lets students upload PDF/DOCX documents, ask questions against them using AI, generate MCQ quizzes, and discover related YouTube videos — all from a single workspace.<br>
-Live on : https://docsync.vercel.app<br>
+🌐 Live on : https://doc-sync-ai.vercel.app<br>
 
 # ⚡KEY FEATURES
 - Upload PDF/DOCX documents with automatic text extraction.
