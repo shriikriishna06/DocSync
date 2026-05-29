@@ -1,0 +1,43 @@
+# ── Environment & secrets ──
+.env
+.env.*
+!.env.example
+
+# ── Python artifacts ──
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Data & databases (runtime-only, not baked into image) ──
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Version control & IDE ──
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# ── Docker meta (don't recurse into the image) ──
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# ── Documentation & misc ──
+README.md
+LICENSE
+*.md
+docs/
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
