@@ -1,0 +1,6 @@
+{
+  "name": "DocSync",
+  "description": "An AI-powered academic workspace for students to upload PDFs, chat with documents, and take adaptive quizzes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

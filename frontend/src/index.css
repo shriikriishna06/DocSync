@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-accent-primary: #ff4d00;
+  --color-graphite-dark: #080808;
+  --color-graphite-surface: #111111;
+  --color-graphite-elevated: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-graphite-dark text-gray-200 font-sans antialiased;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 77, 0, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-graphite-surface/60 backdrop-blur-xl border border-white/5 shadow-2xl rounded-3xl;
+  }
+
+  .glass-modal {
+    @apply bg-graphite-elevated/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-4xl;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:brightness-110 active:scale-95 shadow-lg shadow-orange-500/20 hover:scale-[1.02];
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-5 focus:border-accent-primary focus:ring-4 focus:ring-orange-500/10 transition-all outline-none placeholder:text-gray-600 font-medium;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-accent-primary/20 rounded-full hover:bg-accent-primary/40;
+}
