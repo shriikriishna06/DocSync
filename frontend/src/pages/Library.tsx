@@ -121,7 +121,7 @@ export default function Library({ appState, setActiveTab }: LibraryProps) {
   };
 
   return (
-    <div className="p-4 sm:p-10">
+    <div className="p-4 pt-16 sm:p-10 lg:pt-10">
       <input
         ref={fileInputRef}
         type="file"

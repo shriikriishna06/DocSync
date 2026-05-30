@@ -120,7 +120,7 @@ export default function StudyChat({ activeDoc, email }: StudyChatProps) {
 
   return (
     <div className="flex flex-col h-screen relative">
-      <header className="h-16 border-b border-white/5 bg-graphite-dark/30 backdrop-blur-md sticky top-0 z-30 px-4 sm:px-8 flex items-center justify-between">
+      <header className="h-16 border-b border-white/5 bg-graphite-dark/30 backdrop-blur-md sticky top-0 z-30 pl-14 pr-4 sm:px-8 lg:pl-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight truncate max-w-[60vw] sm:max-w-sm">{activeDoc.file_name}</h2>
         </div>

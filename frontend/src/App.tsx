@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useAuth } from './lib/useAuth';
 import { useAppState } from './lib/useAppState';
 import { authApi, ApiError } from './lib/api';
-import { Trash2 } from 'lucide-react';
+import { Trash2, Menu } from 'lucide-react';
 
 export default function App() {
   const auth = useAuth();
@@ -17,6 +17,7 @@ export default function App() {
   const [showDeleteConfirm, setShowDeleteConfirm] = React.useState(false);
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [deleteError, setDeleteError] = React.useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   if (auth.isLoading && !auth.isAuthenticated) {
     return (
@@ -63,9 +64,19 @@ export default function App() {
         email={auth.email}
         appState={appState}
         onLogout={handleLogout}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
       />
 
-      <main className="flex-1 ml-64 min-h-screen overflow-y-auto custom-scrollbar relative">
+      <button
+        onClick={() => setSidebarOpen(true)}
+        className="fixed top-4 left-4 z-40 lg:hidden w-10 h-10 rounded-xl bg-graphite-surface/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all active:scale-95"
+        aria-label="Open menu"
+      >
+        <Menu size={20} strokeWidth={2.5} />
+      </button>
+
+      <main className="flex-1 lg:ml-64 min-h-screen overflow-y-auto custom-scrollbar relative">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -88,7 +99,7 @@ export default function App() {
               <QuizLab activeDoc={appState.activeDoc} />
             )}
             {activeTab === 'settings' && (
-              <div className="p-12 flex flex-col items-center justify-center h-full text-center">
+              <div className="p-8 sm:p-12 flex flex-col items-center justify-center h-full text-center">
                 <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mb-6">
                   <span className="text-4xl">⚙️</span>
                 </div>

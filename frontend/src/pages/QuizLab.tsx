@@ -183,7 +183,7 @@ export default function QuizLab({ activeDoc }: QuizLabProps) {
   if (showVideos) {
     return (
       <div className="h-screen flex flex-col overflow-hidden">
-        <div className="px-6 sm:px-10 pt-8 sm:pt-12 pb-6 sm:pb-8 border-b border-white/5 shrink-0">
+        <div className="px-6 sm:px-10 pt-16 sm:pt-12 lg:pt-12 pb-6 sm:pb-8 border-b border-white/5 shrink-0">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
@@ -269,7 +269,7 @@ export default function QuizLab({ activeDoc }: QuizLabProps) {
   if (questions.length === 0) {
     return (
       <div className="h-screen flex flex-col overflow-hidden">
-        <div className="px-6 sm:px-10 pt-8 sm:pt-12 pb-6 sm:pb-8 border-b border-white/5 shrink-0">
+        <div className="px-6 sm:px-10 pt-16 sm:pt-12 lg:pt-12 pb-6 sm:pb-8 border-b border-white/5 shrink-0">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">Quiz Lab</h2>
@@ -516,7 +516,7 @@ export default function QuizLab({ activeDoc }: QuizLabProps) {
   const optionKeys = Object.keys(question.options);
 
   return (
-    <div className="max-w-3xl mx-auto py-8 sm:py-16 px-4 sm:px-10">
+    <div className="max-w-3xl mx-auto pt-16 pb-8 sm:py-16 lg:pt-16 px-4 sm:px-10">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 sm:mb-16 border-b border-white/5 pb-8 sm:pb-10">
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">Quiz Lab</h2>
