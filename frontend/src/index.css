@@ -26,11 +26,11 @@
 
 @layer components {
   .glass-card {
-    @apply bg-graphite-surface/60 backdrop-blur-xl border border-white/5 shadow-2xl rounded-3xl;
+    @apply bg-graphite-surface/60 border border-white/5 shadow-2xl rounded-3xl backdrop-blur-xl;
   }
 
   .glass-modal {
-    @apply bg-graphite-elevated/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-4xl;
+    @apply bg-graphite-elevated/80 border border-white/10 shadow-2xl rounded-4xl backdrop-blur-2xl;
   }
 
   .btn-primary {
@@ -39,6 +39,18 @@
 
   .input-field {
     @apply w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-5 focus:border-accent-primary focus:ring-4 focus:ring-orange-500/10 transition-all outline-none placeholder:text-gray-600 font-medium;
+  }
+}
+
+@media (max-width: 1023px) {
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .glass-modal {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
