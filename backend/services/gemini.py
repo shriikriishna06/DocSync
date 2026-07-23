@@ -15,6 +15,7 @@ class Gemini:
         if not api_key:
             raise RuntimeError("GEMINI_API_KEY is not set. Add it to the project root .env file.")
         self.client = genai.Client(api_key=api_key)
+        self.model_name = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
     def _clean_text(self, text: str):
         text = (text or "").strip()
@@ -54,7 +55,7 @@ class Gemini:
 
         try:
             response = self.client.models.generate_content(
-                model="gemini-2.5-flash",
+                model=self.model_name,
                 contents=PROMPT
             )
 
@@ -63,7 +64,7 @@ class Gemini:
             if not text or len(text.split()) < 20:
                 retry_prompt = PROMPT + "\n\nGive a more detailed answer."
                 response = self.client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model=self.model_name,
                     contents=retry_prompt
                 )
                 text = self._clean_text(response.text)
@@ -113,7 +114,7 @@ Context:
         try:
 
             response = self.client.models.generate_content(
-            model="gemini-2.5-flash",
+            model=self.model_name,
             contents=PROMPT
         )
 
@@ -122,7 +123,7 @@ Context:
 
                 retry_prompt = (PROMPT+ "\n\nReturn ONLY valid JSON array.")
                 response = self.client.models.generate_content(
-                model="gemini-2.5-flash",
+                model=self.model_name,
                 contents=retry_prompt
             )
                 text = self._clean_text(response.text)
